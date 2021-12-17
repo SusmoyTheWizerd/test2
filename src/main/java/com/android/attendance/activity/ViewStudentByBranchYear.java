@@ -1,7 +1,5 @@
 package com.android.attendance.activity;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -14,11 +12,12 @@ import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import com.android.attendance.bean.FacultyBean;
+import onCreateOptionsMenu;
 import com.android.attendance.bean.StudentBean;
 import com.android.attendance.db.DBAdapter;
 import com.example.androidattendancesystem.R;
+
+import java.util.ArrayList;
 
 public class ViewStudentByBranchYear extends Activity {
 
@@ -45,7 +44,7 @@ public class ViewStudentByBranchYear extends Activity {
 
 		for(StudentBean studentBean : studentBeanList)
 		{
-			String users = studentBean.getStudent_firstname()+","+studentBean.getStudent_lastname();
+			String users = studentBean.getStudent_firstname()+" "+studentBean.getStudent_lastname();
 					
 			studentList.add(users);
 			Log.d("users: ", users); 
@@ -80,7 +79,7 @@ public class ViewStudentByBranchYear extends Activity {
 
 						for(StudentBean studentBean : studentBeanList)
 						{
-							String users = " FirstName: " + studentBean.getStudent_firstname()+"\nLastname:"+studentBean.getStudent_lastname();
+							String users = "FirstName: " + studentBean.getStudent_firstname()+"\nLastname:"+studentBean.getStudent_lastname();
 							studentList.add(users);
 							Log.d("users: ", users); 
 
@@ -101,11 +100,6 @@ public class ViewStudentByBranchYear extends Activity {
 				AlertDialog alertDialog = alertDialogBuilder.create();
 				// show alert
 				alertDialog.show();
-
-
-
-
-
 				return false;
 			}
 		});
